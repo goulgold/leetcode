@@ -11,7 +11,7 @@ class Solution {
     public:
         static vector<int> twoSum(vector<int>& nums, int target);
     private:
-        static void quickSort(vector<int>& nums);
-        static void splitSort(vector<int>& nums, int lo, int hi);
+        static vector<int> quickSort(vector<int>& nums);
+        static void splitSort(vector<int>& nums, vector<int>& index, int lo, int hi);
 };
 #endif
