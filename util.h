@@ -1,8 +1,17 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
 using std::cout;
 using std::vector;
 using std::endl;
+using std::vector;
+using std::ifstream;
+
+const double CLK_TCK= 1000;
 
 template<typename T>
 void printVector(vector<T>& vect) {
@@ -14,3 +23,5 @@ void printVector(vector<T>& vect) {
     }
     cout << endl;
 }
+
+void printNumArray(int begin, int end, int increment);

@@ -1,5 +1,22 @@
 #include "twoSum.h"
 
+vector<int> Solution::twoSum_Hash(vector<int>& nums, int target) {
+    unordered_map<int, int> store;
+    vector<int> result;
+    for (int i = 0; i < nums.size(); ++i) {
+        store[nums[i]] = i+1;
+    }
+    for (int i = 0; i < nums.size(); ++i) {
+        int num = target - nums[i];
+        if (store.find(num) != store.end() && store.find(num)->second != (i+1)) {
+            result.push_back(nums[i]);
+            result.push_back(nums[num]);
+            break;
+        }
+    }
+    return result;
+}
+
 vector<int> Solution::twoSum(vector<int>& nums, int target) {
 
     vector<int> order_index = quickSort(nums);

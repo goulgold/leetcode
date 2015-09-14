@@ -3,12 +3,15 @@
 
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 
 using std::vector;
 using std::swap;
+using std::unordered_map;
 
 class Solution {
     public:
+        static vector<int> twoSum_Hash(vector<int>& nums, int target);
         static vector<int> twoSum(vector<int>& nums, int target);
     private:
         static vector<int> quickSort(vector<int>& nums);
