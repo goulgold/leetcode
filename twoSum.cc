@@ -9,8 +9,8 @@ vector<int> Solution::twoSum_Hash(vector<int>& nums, int target) {
     for (int i = 0; i < nums.size(); ++i) {
         int num = target - nums[i];
         if (store.find(num) != store.end() && store.find(num)->second != (i+1)) {
-            result.push_back(nums[i]);
-            result.push_back(nums[num]);
+            result.push_back(i+1);
+            result.push_back(store[num]);
             break;
         }
     }

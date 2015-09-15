@@ -14,6 +14,8 @@ int main(int argc, char* argv[]) {
     }
     myfile.close();
 
+    printVector(nums);
+
     int target = atoi(argv[2]);
     cout << "target: " << target << endl;
     clock_t start, end;
