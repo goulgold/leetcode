@@ -7,11 +7,11 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode* return_ptr = result;
     while (l1 != nullptr || l2 != nullptr ) {
         if (l1 == nullptr) {
-            sum = l2->val + carry;
-            carry = 0;
+            sum = (l2->val + carry) % 10;
+            carry = (l2->val + carry) / 10;
         } else if (l2 == nullptr) {
-            sum = l1->val + carry;
-            carry = 0;
+            sum = (l1->val + carry) % 10;
+            carry = (l1->val + carry) / 10;
         } else {
         sum = (l1->val + l2->val + carry) % 10;
         carry = (l1->val + l2->val + carry) / 10;
@@ -29,13 +29,9 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
 }
 
 int main() {
-    ListNode * l1 = new ListNode(2);
-    l1->next = new ListNode(4);
-    ListNode* l1_ptr = l1->next;
-    l1_ptr->next = new ListNode(3);
-    ListNode * l2 = new ListNode(5);
-    l2->next = new ListNode(6);
-    ListNode* l2_ptr = l2->next;
+    ListNode * l1 = new ListNode(9);
+    l1->next = new ListNode(9);
+    ListNode * l2 = new ListNode(1);
 
     ListNode* result = Solution::addTwoNumbers(l1, l2);
 
