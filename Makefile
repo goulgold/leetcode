@@ -7,24 +7,28 @@ endif
 CC = g++
 FLAGC11 = -std=c++11
 
-PROGS = testbin
+PROGS = twosum\
+	addTwoNumbers
 
-OBJECTS = main.o twoSum.o util.o
+all: $(PROGS) util.o
 
-all: $(PROGS)
+$(PROGS): util.o
 
-testbin: $(OBJECTS)
-	$(CC) -o testbin $(OBJECTS)
+twosum: twoSum.o
+	$(CC) -o twosum twoSum.o util.o
 
-main.o: main.cc
-	$(CC) -c main.cc $(CFLAGS) $(FLAGC11)
-
-twoSum.o: twoSum.h twoSum.cc
+twoSum.o: twoSum.h
 	$(CC) -c twoSum.cc $(CFLAGS) $(FLAGC11)
+
+addTwoNumbers: addTwoNumbers.o
+	$(CC) -o addTwoNumbers addTwoNumbers.o $(CFLAGS) $(FLAGC11)
+
+addTwoNumbers.o: addTwoNumbers.cc addTwoNumbers.h
+	$(CC) -c addTwoNumbers.cc $(CFLAGS) $(FLAGC11)
 
 util.o: util.cc util.h
 	$(CC) -c util.cc $(CFLAGS) $(FLAGC11)
 
 .PHONY: clean
 clean:
-	rm -f testbin $(OBJECTS)
+	rm -f *.o $(PROGS)

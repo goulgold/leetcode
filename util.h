@@ -13,6 +13,13 @@ using std::ifstream;
 
 const double CLK_TCK= 1000;
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x): val(x), next(NULL) {}
+    ListNode() {}
+};
+
 template<typename T>
 void printVector(vector<T>& vect) {
     int v_size = vect.size();
