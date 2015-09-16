@@ -8,8 +8,10 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
     while (l1 != nullptr || l2 != nullptr ) {
         if (l1 == nullptr) {
             sum = l2->val;
+            carry = 0;
         } else if (l2 == nullptr) {
             sum = l1->val;
+            carry = 0;
         } else {
         sum = (l1->val + l2->val + carry) % 10;
         carry = (l1->val + l2->val + carry) / 10;
@@ -22,6 +24,7 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
             result = result->next;
         }
     }
+    if (carry == 1) result->next = new ListNode(1);
     return return_ptr;
 }
 
