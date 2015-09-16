@@ -1,6 +1,6 @@
 DEBUG = 1
 ifeq ($(DEBUG), 1)
-	CFLAGS = -g -I . -O2
+	CFLAGS = -g -I . -O0
 else
 	CFLAGS = -I . -O2
 endif

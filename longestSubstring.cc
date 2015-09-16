@@ -9,7 +9,7 @@ int Solution::lengthOfLongestSubstring(string s) {
         ar[i] = ar[i-1] + 1;
         for (int j = i-ar[i-1]; j < i; ++j) {
             if (s[j] == s[i]) {
-                ar[i] = ar[i-1] - ar[j] + 1;
+                ar[i] = i - j;
                 break;
             }
         }
@@ -19,7 +19,7 @@ int Solution::lengthOfLongestSubstring(string s) {
 }
 
 int main () {
-    string s = "bbbbb";
+    string s = "bpfbhmipx";
     int result = Solution::lengthOfLongestSubstring(s);
     cout << result << endl;
     return 0;
