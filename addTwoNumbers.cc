@@ -7,10 +7,10 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode* return_ptr = result;
     while (l1 != nullptr || l2 != nullptr ) {
         if (l1 == nullptr) {
-            sum = l2->val;
+            sum = l2->val + carry;
             carry = 0;
         } else if (l2 == nullptr) {
-            sum = l1->val;
+            sum = l1->val + carry;
             carry = 0;
         } else {
         sum = (l1->val + l2->val + carry) % 10;
