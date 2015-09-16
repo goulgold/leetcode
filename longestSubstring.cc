@@ -2,6 +2,7 @@
 
 int Solution::lengthOfLongestSubstring(string s) {
     int s_size = s.length();
+    if (s_size == 0) return 0;
     int result = 1;
     int ar[s_size];
     ar[0] = 1;
