@@ -8,7 +8,8 @@ CC = g++
 FLAGC11 = -std=c++11
 
 PROGS = twosum\
-	addTwoNumbers
+	addTwoNumbers\
+	longestSubstring
 
 all: $(PROGS) util.o
 
@@ -25,6 +26,12 @@ addTwoNumbers: addTwoNumbers.o
 
 addTwoNumbers.o: addTwoNumbers.cc addTwoNumbers.h
 	$(CC) -c addTwoNumbers.cc $(CFLAGS) $(FLAGC11)
+
+longestSubstring: longestSubstring.o
+	$(CC) -o longestSubstring longestSubstring.o $(CFLAGS) $(FLAGC11)
+
+longestSubstring.o: longestSubstring.cc longestSubstring.h
+	$(CC) -c longestSubstring.cc $(CFLAGS) $(FLAGC11)
 
 util.o: util.cc util.h
 	$(CC) -c util.cc $(CFLAGS) $(FLAGC11)
