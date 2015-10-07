@@ -1,4 +1,12 @@
-#include "longestSubstring.h"
+#include "util/util.h"
+#include <string>
+
+using std::string;
+
+class Solution {
+    public:
+        static int lengthOfLongestSubstring(string s);
+};
 
 int Solution::lengthOfLongestSubstring(string s) {
     int s_size = s.length();

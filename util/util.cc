@@ -6,3 +6,4 @@ void printNumArray(int begin, int end, int increment) {
     }
     cout << endl;
 }
+

@@ -1,4 +1,9 @@
-#include "addTwoNumbers.h"
+#include "util/util.h"
+
+class Solution {
+    public:
+        static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+};
 
 ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
     int sum = 0;
